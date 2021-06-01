@@ -1,0 +1,440 @@
+object Form1: TForm1
+  Left = 976
+  Height = 423
+  Top = 439
+  Width = 811
+  Caption = 'Form1'
+  ClientHeight = 403
+  ClientWidth = 811
+  Menu = MainMenu
+  OnCreate = FormCreate
+  LCLVersion = '2.0.12.0'
+  object Pages: TPageControl
+    AnchorSideLeft.Control = Owner
+    AnchorSideTop.Control = Owner
+    AnchorSideRight.Control = Owner
+    AnchorSideRight.Side = asrBottom
+    AnchorSideBottom.Control = Owner
+    AnchorSideBottom.Side = asrBottom
+    Left = 0
+    Height = 403
+    Top = 0
+    Width = 811
+    ActivePage = PAddNodeInBase
+    Anchors = [akTop, akLeft, akRight, akBottom]
+    TabIndex = 0
+    TabOrder = 0
+    OnChange = PagesChange
+    object PAddNodeInBase: TTabSheet
+      Caption = 'Добавить'
+      ClientHeight = 375
+      ClientWidth = 803
+      object DoctorLable: TLabel
+        Left = 9
+        Height = 15
+        Top = 144
+        Width = 40
+        Caption = 'Доктор'
+        ParentColor = False
+      end
+      object FieldName: TLabeledEdit
+        Left = 7
+        Height = 23
+        Top = 32
+        Width = 113
+        EditLabel.Height = 15
+        EditLabel.Width = 113
+        EditLabel.Caption = 'Имя'
+        EditLabel.ParentColor = False
+        TabOrder = 0
+      end
+      object FieldSurname: TLabeledEdit
+        Left = 128
+        Height = 23
+        Top = 32
+        Width = 120
+        EditLabel.Height = 15
+        EditLabel.Width = 120
+        EditLabel.Caption = 'Фамилия'
+        EditLabel.ParentColor = False
+        TabOrder = 1
+      end
+      object FieldPatronymic: TLabeledEdit
+        Left = 256
+        Height = 23
+        Top = 32
+        Width = 120
+        EditLabel.Height = 15
+        EditLabel.Width = 120
+        EditLabel.Caption = 'Отчество'
+        EditLabel.ParentColor = False
+        TabOrder = 2
+      end
+      object BAdd: TButton
+        Left = 7
+        Height = 24
+        Top = 208
+        Width = 121
+        Caption = 'Создание списка'
+        OnClick = BAddClick
+        TabOrder = 3
+      end
+      object FieldPolicyNumber: TLabeledEdit
+        Left = 7
+        Height = 25
+        Top = 88
+        Width = 162
+        EditLabel.Height = 15
+        EditLabel.Width = 162
+        EditLabel.Caption = 'Мед. Полис'
+        EditLabel.ParentColor = False
+        EditLabel.ParentFont = False
+        EditLabel.Font.CharSet = RUSSIAN_CHARSET
+        EditLabel.Font.Color = clBlack
+        EditLabel.Font.Height = -12
+        EditLabel.Font.Name = 'Segoe UI'
+        EditLabel.Font.Pitch = fpVariable
+        EditLabel.Font.Quality = fqDraft
+        Font.CharSet = RUSSIAN_CHARSET
+        Font.Color = clBlack
+        Font.Height = -15
+        Font.Name = 'Courier New'
+        Font.Pitch = fpFixed
+        Font.Quality = fqDraft
+        MaxLength = 16
+        ParentFont = False
+        TabOrder = 4
+      end
+      object FieldTime: TDateTimePicker
+        Left = 248
+        Height = 23
+        Top = 168
+        Width = 50
+        CenturyFrom = 1941
+        DateDisplayOrder = ddoYMD
+        MaxDate = 72533
+        MinDate = 40452
+        TabOrder = 5
+        DateSeparator = '.'
+        TrailingSeparator = False
+        TextForNullDate = 'NULL'
+        LeadingZeros = True
+        Kind = dtkTime
+        TimeSeparator = ':'
+        TimeFormat = tf24
+        TimeDisplay = tdHM
+        DateMode = dmComboBox
+        Date = 44337
+        Time = 0.401542245374003
+        UseDefaultSeparators = False
+        HideDateTimeParts = []
+        MonthNames = 'Long'
+      end
+      object TimeLable: TLabel
+        Left = 248
+        Height = 15
+        Top = 144
+        Width = 35
+        Caption = 'Время'
+        ParentColor = False
+      end
+      object FieldDoctor: TComboBox
+        Left = 8
+        Height = 23
+        Top = 168
+        Width = 200
+        ItemHeight = 15
+        Items.Strings = (
+          'терапевт > Гаряева.Р.М.'
+          'терапевт > Цюрюмова И.Г.'
+          'педиатр > Кензеева Д.М.'
+          'педиатр > Балтыкова В.Ц.'
+          'травматолог > Далантаев С.У.'
+          'хирург > Китидова Н.Н.'
+          'оториноларинголог > Устиева Т.Т.'
+          'стоматолог > Насунова Е.О.'
+          'инфекционист > Гучинова О.В.'
+          'акушер -гинеколог > Фомичева Т.С.'
+          'дерматолог >Ходжигоров У.В.'
+        )
+        TabOrder = 6
+        Text = '...'
+      end
+      object OutputAddStatus: TLabel
+        Left = 8
+        Height = 15
+        Top = 242
+        Width = 56
+        Caption = 'Результат:'
+        ParentColor = False
+      end
+      object L16num: TLabel
+        Left = 183
+        Height = 15
+        Top = 88
+        Width = 45
+        Caption = '16 цифр'
+        ParentColor = False
+      end
+      object Label2: TLabel
+        Left = 187
+        Height = 1
+        Top = 256
+        Width = 1
+        ParentColor = False
+      end
+    end
+    object PRemoveNode: TTabSheet
+      Caption = 'Удалить'
+      ClientHeight = 375
+      ClientWidth = 803
+      object FieldNameR: TLabeledEdit
+        Left = 8
+        Height = 23
+        Top = 120
+        Width = 120
+        EditLabel.Height = 15
+        EditLabel.Width = 120
+        EditLabel.Caption = 'Имя'
+        EditLabel.ParentColor = False
+        TabOrder = 0
+      end
+      object FieldSurnameR: TLabeledEdit
+        Left = 152
+        Height = 23
+        Top = 120
+        Width = 120
+        EditLabel.Height = 15
+        EditLabel.Width = 120
+        EditLabel.Caption = 'Фамилия'
+        EditLabel.ParentColor = False
+        TabOrder = 1
+      end
+      object FieldPatronymicR: TLabeledEdit
+        Left = 296
+        Height = 23
+        Top = 120
+        Width = 120
+        EditLabel.Height = 15
+        EditLabel.Width = 120
+        EditLabel.Caption = 'Отчество'
+        EditLabel.ParentColor = False
+        TabOrder = 2
+      end
+      object BSearch: TButton
+        Left = 8
+        Height = 25
+        Top = 216
+        Width = 75
+        Caption = 'Поиск'
+        Enabled = False
+        OnClick = BSearchClick
+        TabOrder = 3
+      end
+      object FieldDateR: TComboBox
+        Left = 120
+        Height = 23
+        Top = 216
+        Width = 112
+        Enabled = False
+        ItemHeight = 15
+        TabOrder = 4
+        Text = 'Время'
+      end
+      object InputGroupBoxRadio: TGroupBox
+        Left = 8
+        Height = 80
+        Top = 0
+        Width = 182
+        Caption = 'удаление по'
+        ClientHeight = 60
+        ClientWidth = 178
+        TabOrder = 5
+        object RadioName: TRadioButton
+          Left = 8
+          Height = 19
+          Top = 0
+          Width = 56
+          Caption = 'имени'
+          Checked = True
+          OnChange = RadioNameChange
+          TabOrder = 1
+          TabStop = True
+        end
+        object RadioPolicyNumber: TRadioButton
+          Left = 8
+          Height = 19
+          Top = 32
+          Width = 63
+          Caption = 'полюсу'
+          OnChange = RadioPolicyNumberChange
+          TabOrder = 0
+        end
+      end
+      object FieldPolicyNumberR: TLabeledEdit
+        Left = 8
+        Height = 25
+        Top = 176
+        Width = 162
+        EditLabel.Height = 15
+        EditLabel.Width = 162
+        EditLabel.Caption = 'Мед. Полис'
+        EditLabel.ParentColor = False
+        EditLabel.ParentFont = False
+        EditLabel.Font.CharSet = RUSSIAN_CHARSET
+        EditLabel.Font.Color = clBlack
+        EditLabel.Font.Height = -12
+        EditLabel.Font.Name = 'Segoe UI'
+        EditLabel.Font.Pitch = fpVariable
+        EditLabel.Font.Quality = fqDraft
+        Enabled = False
+        Font.CharSet = RUSSIAN_CHARSET
+        Font.Color = clBlack
+        Font.Height = -15
+        Font.Name = 'Courier New'
+        Font.Pitch = fpFixed
+        Font.Quality = fqDraft
+        MaxLength = 16
+        ParentFont = False
+        TabOrder = 6
+      end
+      object BDelete: TButton
+        Left = 248
+        Height = 25
+        Top = 216
+        Width = 75
+        Caption = 'Удалить'
+        Enabled = False
+        OnClick = BDeleteClick
+        TabOrder = 7
+      end
+      object OutputAnswerR: TLabel
+        Left = 8
+        Height = 15
+        Top = 248
+        Width = 56
+        Caption = 'Результат:'
+        ParentColor = False
+      end
+    end
+    object PViewReport: TTabSheet
+      Caption = 'Просмотреть'
+      ClientHeight = 375
+      ClientWidth = 803
+      object FieldCBSortBox: TComboBox
+        Left = 472
+        Height = 23
+        Top = 8
+        Width = 168
+        ItemHeight = 15
+        Items.Strings = (
+          'по врачу (от м к б)'
+          'по дате и времени (от м к б)'
+          'по дате и времени (от б к м)'
+          ''
+        )
+        TabOrder = 0
+        Text = 'сортировка'
+      end
+      object OutputMemo: TMemo
+        AnchorSideLeft.Control = PViewReport
+        AnchorSideTop.Control = PViewReport
+        AnchorSideBottom.Control = PViewReport
+        AnchorSideBottom.Side = asrBottom
+        Left = 0
+        Height = 375
+        Top = 0
+        Width = 460
+        Anchors = [akTop, akLeft, akBottom]
+        Font.CharSet = RUSSIAN_CHARSET
+        Font.Color = clBlack
+        Font.Height = -12
+        Font.Name = 'Courier New'
+        Font.Pitch = fpFixed
+        Font.Quality = fqDraft
+        ParentFont = False
+        ScrollBars = ssBoth
+        TabOrder = 1
+        WordWrap = False
+      end
+      object BExportReport: TButton
+        Left = 472
+        Height = 25
+        Top = 448
+        Width = 75
+        Caption = 'Экспорт'
+        TabOrder = 2
+      end
+      object BView: TButton
+        Left = 648
+        Height = 25
+        Top = 6
+        Width = 104
+        Caption = 'Просмотреть'
+        Enabled = False
+        OnClick = BViewClick
+        TabOrder = 3
+      end
+    end
+  end
+  object MainMenu: TMainMenu
+    Left = 680
+    Top = 192
+    object MIFiles: TMenuItem
+      Caption = 'Файлы'
+      OnClick = MIFilesClick
+      object MenuItemOpen: TMenuItem
+        Caption = 'Открыть'
+        OnClick = MenuItemOpenClick
+      end
+      object MIAddInBase: TMenuItem
+        Caption = 'Добавить в базу'
+        OnClick = MIAddInBaseClick
+      end
+      object MISave: TMenuItem
+        Caption = 'Сохранить'
+        OnClick = MISaveClick
+      end
+      object MIExport: TMenuItem
+        Caption = 'Экспорт'
+        object MIExportTxt: TMenuItem
+          Caption = 'MIExportTxt'
+          OnClick = MIExportTxtClick
+        end
+        object MIExportCSV: TMenuItem
+          Caption = 'MIExportCSV'
+          OnClick = MIExportCSVClick
+        end
+      end
+    end
+    object MIList: TMenuItem
+      Caption = 'Список'
+      OnClick = MIListClick
+      object MIRemoveList: TMenuItem
+        Caption = 'Удалить список'
+        Enabled = False
+        OnClick = MIRemoveListClick
+      end
+    end
+    object MenuItemHelp: TMenuItem
+      Caption = 'Справка'
+    end
+  end
+  object OpenDOpenDB: TOpenDialog
+    Title = 'Открыть файл Базы данных'
+    Filter = 'Файл Базы Данных|*.db'
+    Left = 680
+    Top = 72
+  end
+  object SaveDSaveBase: TSaveDialog
+    DefaultExt = '.db'
+    Left = 680
+    Top = 248
+  end
+  object SaveDSaveReport: TSaveDialog
+    DefaultExt = '.txt'
+    FileName = 'Report'
+    Left = 680
+    Top = 136
+  end
+end
